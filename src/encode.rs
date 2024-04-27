@@ -277,7 +277,10 @@ impl Encoder {
                 data_value.set_json_value(value.to_string());
                 values.push(data_value);
             }
-            JSONValue::Null => {}
+            JSONValue::Null => {
+                data_value.set_json_value(value.to_string());
+                values.push(data_value);
+            }
         };
         properties.push(values.len() as u32 - 1);
     }
